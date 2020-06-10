@@ -115,6 +115,11 @@ class SignUp extends React.Component {
                                 Regresar
                                 </Button>
                             </Link>
+                            <Link to="/Dashboard" >
+                                <Button block variant="success" type="button">
+                                    Dashboard
+                                </Button>
+                            </Link>
                         </form>
                     </Card>
                 </Card>
