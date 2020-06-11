@@ -6,7 +6,7 @@ import DashDebts from './Dashboard/components/DashbDebts'
 import DashClients from './Dashboard/components/DashbClients'
 import DashPays from './Dashboard/components/DashbPayment'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import './App.css';
 function App(){
     return (
       <Router>
