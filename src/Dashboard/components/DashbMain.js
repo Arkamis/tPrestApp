@@ -1,42 +1,56 @@
 import React from "react";
 import 'antd/dist/antd.css';
 import '../styles/Dashboard.css'
-import { Row, Col, Container, Navbar, Nav } from "react-bootstrap"
 import { Link } from 'react-router-dom';
-
-import { Layout, Menu, Breadcrumb } from 'antd';
+import HeaderNav from './headerNav'
+import FooterD from './footerDash'
+import { Layout, Menu, Breadcrumb, Row, Col } from 'antd';
 import { SettingOutlined, SwapOutlined, PaperClipOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 const { Content, Footer, Sider } = Layout;
+  
+const menu = (
+    <Menu>
+        <Menu.Item key="1">
+            Perfil
+        </Menu.Item>
+        <Menu.Item key="2">
+            Configuración
+        </Menu.Item>
+        <Menu.Item key="3">
+            Feedback
+        </Menu.Item>
+    </Menu>
+);
 
 class DashMain extends React.Component {
 
+    state = {
+        collapsed: false,
+    };
+    
+    onCollapse = collapsed => {
+        console.log(collapsed);
+        this.setState({ collapsed });
+    };
+
     render() {
-    return (
-        <Container fluid>
-            <Row className = "side-nav">
-                <Col>
-                    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-                        <Navbar.Brand> <Link to = '/DashbMain'>PrestApp</Link> </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className = "ml-auto" >
-                                <Nav.Link eventKey = {1}> Notificaciones </Nav.Link>
-                                <Nav.Link eventKey = {2}> Usuario </Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Navbar>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm = {2}>
-                    <Sider className="site-layout-background" width={200}>
+        return (
+            <Layout>
+                <Row>
+                    <Col sm = {24}>
+                        <HeaderNav/>
+                    </Col>
+                </Row>
+                <Layout style={{ minHeight: '100vh' }}>
+                    <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} width={200} className="site-layout-background">
                         <Menu
-                            mode="inline"
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            style={{ height: '100%' }}
+                        theme = "dark"
+                        mode="inline"
+                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['sub1']}
+                        style={{ height: '100%', borderRight: 0 }}
                         >
                             <SubMenu key="sub1" icon={<PaperClipOutlined />} title="Administración">
                                 <Menu.Item key="1">
@@ -67,57 +81,57 @@ class DashMain extends React.Component {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                </Col>
-                <Col sm = {10}>
-                    <Layout>
-                        <Content style={{ padding: '0 50px' }}>
-                            <Breadcrumb style={{ margin: '16px 0' }}>
-                                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                                <Breadcrumb.Item>List</Breadcrumb.Item>
-                                <Breadcrumb.Item>App</Breadcrumb.Item>
-                            </Breadcrumb>
-                            <Layout className="site-layout-background" style={{ padding: '24px 0' }}>
-                                <Content style={{ padding: '0 24px', minHeight: 280 }}>
-                                    <Row>
-                                        <Col sm = {12} className = {"center fieldArnd"}>
-                                            <h2>
-                                                Bienvenido a PrestApp, Usuario!
-                                            </h2>
-                                        </Col>
-                                        <Col sm = {12} className = "center fieldArnd">
-                                            <h3>
-                                                Historial de transacciones!
-                                            </h3>
-                                        </Col>
-                                        <Col sm = {12} className = "fieldArnd" style = {{padding: '20px'}}>
-                                            <p>Hoy, 10 de Junio de 2020!</p>
-                                            <hr/>
-                                            <ul>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                            </ul>
-                                            <p>Hace una semana, 3 de Junio de 2020!</p>
-                                            <hr/>
-                                            <ul>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                                <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
-                                            </ul>
-                                        </Col>
-                                    </Row>
-                                </Content>
-                            </Layout>
+                    <Layout style={{ padding: '0 24px 24px', background: "black" }}>
+                        <Breadcrumb style={{ margin: '16px 0', color: "white" }}>
+                            <Breadcrumb.Item >Home</Breadcrumb.Item>
+                            <Breadcrumb.Item >List</Breadcrumb.Item>
+                            <Breadcrumb.Item >App</Breadcrumb.Item>
+                        </Breadcrumb>
+                        <Content
+                        className="site-layout-background"
+                        style={{
+                            padding: 24,
+                            margin: 0,
+                            minHeight: 280,
+                        }}
+                        >
+                            <Row>
+                                <Col sm = {24} className = {"center fieldArnd"}>
+                                    <h2 className = "text-white">
+                                        Bienvenido a PrestApp, Usuario!
+                                    </h2>
+                                </Col>
+                                <Col sm = {24} className = "center fieldArnd">
+                                    <h3 className = "white-text">
+                                        Historial de transacciones!
+                                    </h3>
+                                </Col>
+                                <Col sm = {24} className = "fieldArnd white-text" style = {{padding: '20px'}}>
+                                    <p>Hoy, 10 de Junio de 2020!</p>
+                                    <hr/>
+                                    <ul>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                    </ul>
+                                    <p>Hace una semana, 3 de Junio de 2020!</p>
+                                    <hr/>
+                                    <ul>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                        <li>Occaecat proident velit proident exercitation cillum in esse esse incididunt cillum irure sint .</li>
+                                    </ul>
+                                </Col>
+                            </Row>
+                            <Row className = "center">
+                                <FooterD/>
+                            </Row>
                         </Content>
                     </Layout>
-                </Col>
-                <Col>
-                    <Footer className = "center">PrestApp ©2020 Derechos reservados</Footer>
-                </Col>
-            </Row>
-            </Container>
+                </Layout>
+            </Layout>
         )
     }
 }
