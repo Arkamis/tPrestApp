@@ -55,3 +55,9 @@
 .light-grnd{
   background: #aaaaaa;
 }
+
+.paLogo {
+  background-image: url(../../assets/prestapp.png);
+  height: 50px;
+  width: 50px;
+}

@@ -1,11 +1,13 @@
 import React from "react";
 import 'antd/dist/antd.css';
-import '../styles/Dashboard.css'
+import '../../Styles/Dashboard.css'
+import HeaderNav from '../HeaderNav'
+import SiderNav from '../SiderNavP'
 import { Layout } from 'antd';
-import HeaderNav from './headerNav'
-import SiderNav from './siderNav'
 
-class DashClients extends React.Component {
+
+class DashPays extends React.Component {
+    
     render(){
         return(
             <Layout>
@@ -16,4 +18,4 @@ class DashClients extends React.Component {
     }
 }
 
-export default DashClients
+export default DashPays
