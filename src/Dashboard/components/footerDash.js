@@ -1,6 +1,6 @@
 import React from "react";
 import 'antd/dist/antd.css';
-import '../styles/Dashboard.css'
+import '../Styles/Dashboard.css'
 import { Row, Col, Layout } from 'antd';
 
 

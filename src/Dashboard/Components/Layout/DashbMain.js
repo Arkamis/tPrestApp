@@ -1,28 +1,14 @@
 import React from "react";
 import 'antd/dist/antd.css';
-import '../styles/Dashboard.css'
+import '../../Styles/Dashboard.css'
 import { Link } from 'react-router-dom';
-import HeaderNav from './headerNav'
-import FooterD from './footerDash'
+import HeaderNav from '../HeaderNav'
+import FooterD from '../FooterDash'
 import { Layout, Menu, Breadcrumb, Row, Col } from 'antd';
 import { SettingOutlined, SwapOutlined, PaperClipOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
-const { Content, Footer, Sider } = Layout;
-  
-const menu = (
-    <Menu>
-        <Menu.Item key="1">
-            Perfil
-        </Menu.Item>
-        <Menu.Item key="2">
-            Configuración
-        </Menu.Item>
-        <Menu.Item key="3">
-            Feedback
-        </Menu.Item>
-    </Menu>
-);
+const { Content, Sider } = Layout;
 
 class DashMain extends React.Component {
 
@@ -31,7 +17,6 @@ class DashMain extends React.Component {
     };
     
     onCollapse = collapsed => {
-        console.log(collapsed);
         this.setState({ collapsed });
     };
 
