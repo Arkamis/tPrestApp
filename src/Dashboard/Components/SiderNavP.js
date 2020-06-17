@@ -24,11 +24,11 @@ class SiderNav extends React.Component {
                                 <h3 className = "fieldArnd center text-white">Historial de Pagos</h3>
                             </Col>
                             <Search/>
-                            <PaymentCard/>
+                            <PaymentCard noPago = "" cliente = "" deuda = "" dateStart = "" totalToPay = "" totaldue = "" estado = ""/>
                             <hr/>
-                            <PaymentCard/>
+                            <PaymentCard noPago = "" cliente = "" deuda = "" dateStart = "" totalToPay = "" totaldue = "" estado = ""/>
                             <hr/>
-                            <PaymentCard/>
+                            <PaymentCard noPago = "" cliente = "" deuda = "" dateStart = "" totalToPay = "" totaldue = "" estado = ""/>
                         </Row>
                         <Pager/>
                         <FooterD/>

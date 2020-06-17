@@ -50,7 +50,6 @@ const notificaciones = (
 );
 
 class HeaderNav extends React.Component{
-
     render(){
         return(
             <Row>

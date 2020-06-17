@@ -7,29 +7,16 @@ import Update from './UpdateDebt'
 
 class PaymentCard extends React.Component{
 
-    state = {
-        noPago: "1",
-        cliente: "ID_Cliente",
-        deuda: "ID_Deuda",
-        dateStart: "10/10/20",
-        dueDate: "20/10/20",
-        totalToPay: 500,
-        totaldue: 3000,
-        estado: [
-            "Pendiente",
-            "Completado",
-            "Activo",
-            "Atrasado"
-        ],
-    }
-
     render(){
+
+        const { noPago, cliente, deuda, dateStart, totalToPay, totaldue, estado } = this.props
+
         return(
             <div className = "light-grnd">
                 <Checkbox className = "ml-3 mt-3">Seleccionar</Checkbox>
                 <PageHeader
                 className="site-page-header"
-                title={"Pago "+this.state.noPago}
+                title={"Pago " + noPago}
                 extra={[
                     <Col>
                         <Update/>,
@@ -40,21 +27,21 @@ class PaymentCard extends React.Component{
                 ]}
                 >
                     <Descriptions size="small" column={3}>
-                        <Descriptions.Item label="Cliente: "> {this.state.cliente} </Descriptions.Item>
-                        <Descriptions.Item label="Deuda: "> {this.state.deuda} </Descriptions.Item>
-                        <Descriptions.Item label="Tiempo de creación: "> {this.state.dateStart} </Descriptions.Item>
+                        <Descriptions.Item label="Cliente: "> {cliente} </Descriptions.Item>
+                        <Descriptions.Item label="Deuda: "> {deuda} </Descriptions.Item>
+                        <Descriptions.Item label="Tiempo de creación: "> {dateStart} </Descriptions.Item>
                     </Descriptions>
                     <Row>
-                        <Statistic title="Estado" value = {this.state.estado[0]} />
+                        <Statistic title="Estado" value = {estado} />
                         <Statistic
                         title="Cantidad de pago: "
                         prefix="$"
-                        value={this.state.totalToPay}
+                        value={totalToPay}
                         style={{
                             margin: '0 32px',
                         }}
                         />
-                        <Statistic title="Balance" prefix="$" value={this.state.totaldue} />
+                        <Statistic title="Balance" prefix="$" value={totaldue} />
                     </Row>
                 </PageHeader>
                 <br />

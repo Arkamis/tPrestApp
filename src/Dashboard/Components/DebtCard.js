@@ -7,31 +7,16 @@ import Update from './UpdateDebt'
 
 class Debtcard extends React.Component{
 
-    state = {
-        debtCreator: "Mike",
-        title: "Deuda de cliente",
-        descripcion: "...",
-        cliente: "ID_Cliente",
-        dateStart: "10/10/20",
-        dueDate: "20/10/20",
-        tags: ["#dude","#Yolo"],
-        frecPagos: 0,
-        totaldue: 0,
-        estado: [
-            "Pendiente",
-            "Completado",
-            "Activo",
-            "Atrasado"
-        ]
-    }
-
     render(){
+
+        const { debtCreator, title, descripcion, cliente, dateStart, dueDate, tags, frecPagos, totaldue, estado } = this.props
+
         return(
             <div className = "light-grnd">
                 <Checkbox className = "m-2">Seleccionar</Checkbox>
                 <PageHeader
                 className="site-page-header"
-                title= {this.state.title}
+                title= {title}
                 extra={[
                     <Col>
                         <Update/>,
@@ -42,20 +27,20 @@ class Debtcard extends React.Component{
                 ]}
                 >
                     <Descriptions size="small" column={3}>
-                        <Descriptions.Item style = {{color: "white"}} label="Creado Por: ">Lili Qu</Descriptions.Item>
-                        <Descriptions.Item label="Cliente: "> {this.state.userName} </Descriptions.Item>
-                        <Descriptions.Item label="Tiempo de creación: "> {this.state.dateStart} </Descriptions.Item>
-                        <Descriptions.Item label="Vencimiento: "> {this.state.dueDate} </Descriptions.Item>
-                        <Descriptions.Item label="Descripción: "> {this.state.descripcion} </Descriptions.Item>
-                        <Descriptions.Item label = "Frecuencia de pago: "> {this.state.frecPagos} </Descriptions.Item>
-                        <Descriptions.Item label = "Etiquetas: "> {this.state.tags} </Descriptions.Item>
+                        <Descriptions.Item style = {{color: "white"}} label="Creado Por: "> {debtCreator} </Descriptions.Item>
+                        <Descriptions.Item label="Cliente: "> {cliente} </Descriptions.Item>
+                        <Descriptions.Item label="Tiempo de creación: "> {dateStart} </Descriptions.Item>
+                        <Descriptions.Item label="Vencimiento: "> {dueDate} </Descriptions.Item>
+                        <Descriptions.Item label="Descripción: "> {descripcion} </Descriptions.Item>
+                        <Descriptions.Item label = "Frecuencia de pago: "> {frecPagos} </Descriptions.Item>
+                        <Descriptions.Item label = "Etiquetas: "> {tags} </Descriptions.Item>
                     </Descriptions>
                     <Row>
-                        <Statistic title="Estado" value= {this.state.estado[0]} />
+                        <Statistic title="Estado" value= {estado} />
                         <Statistic
                         title="Deuda inicial"
                         prefix="$"
-                        value={this.state.totaldue}
+                        value={totaldue}
                         style={{
                             margin: '0 32px',
                         }}

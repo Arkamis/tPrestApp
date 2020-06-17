@@ -24,11 +24,11 @@ class SiderNav extends React.Component {
                                 <h3 className = "fieldArnd center text-white">Historial de Clientes</h3>
                             </Col>
                             <Search/>
-                            <ClientCard/>
+                            <ClientCard primerNombre = ""  primerApellido = "" dateStart = "" email = "" phone = "" />
                             <hr/>
-                            <ClientCard/>
+                            <ClientCard primerNombre = ""  primerApellido = "" dateStart = "" email = "" phone = "" />
                             <hr/>
-                            <ClientCard/>
+                            <ClientCard primerNombre = ""  primerApellido = "" dateStart = "" email = "" phone = "" />
                         </Row>
                         <Pager/>
                         <FooterD/>

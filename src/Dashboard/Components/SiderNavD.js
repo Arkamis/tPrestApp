@@ -24,11 +24,44 @@ class SiderNav extends React.Component {
                                 <h3 className = "fieldArnd center text-white">Historial de Deudas</h3>
                             </Col>
                             <Search/>
-                            <DebtCard/>
+                            <DebtCard 
+                                debtCreator = "" 
+                                title = "" 
+                                descripcion = "" 
+                                cliente = "" 
+                                dateStart = "" 
+                                dueDate = "" 
+                                tags = "" 
+                                frecPagos = "" 
+                                totaldue = "" 
+                                estado = ""
+                            />
                             <hr/>
-                            <DebtCard/>
+                            <DebtCard
+                                debtCreator = "" 
+                                title = "" 
+                                descripcion = "" 
+                                cliente = "" 
+                                dateStart = "" 
+                                dueDate = "" 
+                                tags = "" 
+                                frecPagos = "" 
+                                totaldue = "" 
+                                estado = "" 
+                            />
                             <hr/>
-                            <DebtCard/>
+                            <DebtCard
+                                debtCreator = "" 
+                                title = "" 
+                                descripcion = "" 
+                                cliente = "" 
+                                dateStart = "" 
+                                dueDate = "" 
+                                tags = "" 
+                                frecPagos = "" 
+                                totaldue = "" 
+                                estado = ""
+                            />
                         </Row>
                         <Pager/>
                         <FooterD/>

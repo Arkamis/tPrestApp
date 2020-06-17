@@ -7,22 +7,14 @@ import Update from './UpdateDebt'
 
 class ClientCard extends React.Component{
 
-    state = {
-        primerNombre: "Roberto",
-        primerApellido: "Velasco",
-        deuda: "ID_Deuda",
-        dateStart: "10/10/20",
-        email: "gogog@gmail.com",
-        phone: "312-125-1444",
-    }
-
     render(){
+        const { primerNombre, primerApellido, dateStart, email, phone } = this.props
         return(
             <div className = "light-grnd">
                 <Checkbox className = "m-2">Seleccionar</Checkbox>
                 <PageHeader
                 className="site-page-header"
-                title="Cliente"
+                title={primerNombre + primerApellido}
                 extra={[
                     <Col>
                         <Update/>,
@@ -33,11 +25,11 @@ class ClientCard extends React.Component{
                 ]}
                 >
                     <Descriptions size="small" column={3}>
-                        <Descriptions.Item label="Primer Nombre: "> {this.state.primerNombre} </Descriptions.Item>
-                        <Descriptions.Item label="Primer Apellido: "> {this.state.primerApellido} </Descriptions.Item>
-                        <Descriptions.Item label="Tiempo de creación: "> {this.state.dateStart} </Descriptions.Item>
-                        <Descriptions.Item label="E-mail: "> {this.state.email} </Descriptions.Item>
-                        <Descriptions.Item label="Phone: "> {this.state.phone} </Descriptions.Item>
+                        <Descriptions.Item label="Primer Nombre: "> {primerNombre} </Descriptions.Item>
+                        <Descriptions.Item label="Primer Apellido: "> {primerApellido} </Descriptions.Item>
+                        <Descriptions.Item label="Tiempo de creación: "> {dateStart} </Descriptions.Item>
+                        <Descriptions.Item label="E-mail: "> {email} </Descriptions.Item>
+                        <Descriptions.Item label="Phone: "> {phone} </Descriptions.Item>
                     </Descriptions>
                 </PageHeader>
                 <br/>
