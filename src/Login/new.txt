@@ -1,0 +1,9 @@
+xd
+> git clone [Repository URL] //descarga repositorio
+> git pull //updates repository
+> git checkout -b [branchname] //Crea y cambia de rama
+> git branch -d [branchname] //Elimina rama
+> git branch -D [branchname] //Elimina rama mas fuerte
+> git add . //stages docs
+> git commit -m "descripción" //commit más descripción
+> git push //Para subir y modificar archivos
