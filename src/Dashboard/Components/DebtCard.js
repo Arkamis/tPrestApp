@@ -18,7 +18,7 @@ class Debtcard extends React.Component{
                 className="site-page-header"
                 title= {title}
                 extra={[
-                    <Col>
+                    <Col style = {{alignItems: "center", justifyContent: "center"}}>
                         <Update/>,
                         <Button key="1" type="primary" className = "mt-2" block = {true}>
                         Favorito <StarOutlined />

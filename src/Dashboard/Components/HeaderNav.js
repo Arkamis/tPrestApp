@@ -4,13 +4,14 @@ import '../Styles/Dashboard.css'
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Row, Col, Button, Dropdown } from 'antd';
 import { PlusOutlined , NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import AddClient from './AddClient'
 
 const { Header } = Layout;
 
 const add = (
     <Menu>
         <Menu.Item key="1">
-            Agregar Cliente
+            <AddClient/>
         </Menu.Item>
         <Menu.Item key="2">
             Agregar Deuda
