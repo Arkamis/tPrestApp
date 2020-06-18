@@ -4,7 +4,7 @@ import '../Styles/Dashboard.css'
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Row, Col, Button, Dropdown } from 'antd';
 import { PlusOutlined , NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import AddClient from './AddClient'
+import AddClient from './Modals/AddClient'
 
 const { Header } = Layout;
 
