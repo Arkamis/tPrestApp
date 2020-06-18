@@ -5,13 +5,14 @@ import { Modal, Button } from 'antd';
 class UpdateDebt extends React.Component{
   constructor(props){
     super(props)
-    this.state = { visible: false }
+    this.state = { 
+      visible: false, 
+     }
     this.showModal = this.showModal.bind(this);
   }
   
   showModal = () => {
     this.setState( {visible : true} );
-    console.log(this.state.visible)
   }
 
   handleOk = (e) => {

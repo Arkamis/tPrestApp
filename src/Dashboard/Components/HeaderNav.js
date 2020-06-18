@@ -4,20 +4,20 @@ import '../Styles/Dashboard.css'
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Row, Col, Button, Dropdown } from 'antd';
 import { PlusOutlined , NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import AddClient from './Modals/AddClient'
+import Add from './Modals/AddModal'
 
 const { Header } = Layout;
 
 const add = (
     <Menu>
         <Menu.Item key="1">
-            <AddClient/>
+            <Add name="Cliente"/>
         </Menu.Item>
         <Menu.Item key="2">
-            Agregar Deuda
+            <Add name="Deuda"/>
         </Menu.Item>
         <Menu.Item key="3">
-            Agregar Pago
+            <Add name="Pago"/>
         </Menu.Item>
     </Menu>
 );
