@@ -66,7 +66,7 @@ class HeaderNav extends React.Component{
                                 <div>
                                     <Dropdown theme = "dark" overlay={add}>
                                         <Button className = "white-text d-Button" ghost>
-                                            <PlusOutlined/>Agregar Transacción
+                                            <PlusOutlined/>Agregar
                                         </Button>
                                     </Dropdown>
                                 </div> 
