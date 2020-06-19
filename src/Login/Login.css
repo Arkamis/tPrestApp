@@ -5,7 +5,27 @@
       max-width: 320px;
     }
 
-    .cardSize{
+    .imgSize{
+      width: 20rem !important; /*override the width below*/
       width: 20rem;
+      max-width: 100%;
     }
-  }
+}
+
+.border-green {
+  border-style: solid;
+  border-color: green;
+  border-radius: 5px;
+  padding: 0%;
+  margin: 5% auto;
+  -webkit-box-shadow: -1px 1px 16px -2px rgba(97,97,97,1);
+  -moz-box-shadow: -1px 1px 16px -2px rgba(97,97,97,1);
+  box-shadow: -1px 1px 16px -2px rgba(97,97,97,1);
+}
+.img-holder {
+  position: relative;
+}
+.login-form{
+  padding-left: 5%;
+  padding-right: 5%;
+}
