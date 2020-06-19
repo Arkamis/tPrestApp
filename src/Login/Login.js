@@ -1,8 +1,10 @@
 import React from "react";
+import Recaptcha from 'react-recaptcha';
 import { Button, FormGroup, FormControl, FormLabel, Card, FormText } from "react-bootstrap";
 import "./Login.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+
 
 class Login extends React.Component {
   constructor(props){
@@ -70,11 +72,20 @@ class Login extends React.Component {
                       placeholder="Ingresar contraseña"
                     />
                   </FormGroup>
+
+                  <FormGroup>
+                    <Recaptcha 
+                    sitekey="6LesmaYZAAAAAICpByhXAWiOtcLaxhhr_fyRPQiX"
+                    render="explicit"
+                    />
+                  </FormGroup>
+
                   <FormGroup>
                     <Button block variant="success" disabled={!this.validateForm(this)} type="submit">
                       Ingresar
                     </Button>
                   </FormGroup>
+                  
                   <Link to="/Registro" >
                     <Button block variant="success" type="button">
                       Registro
