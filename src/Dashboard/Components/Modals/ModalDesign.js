@@ -1,42 +1,37 @@
 import React from 'react';
-import {Modal,Button} from 'antd';
+import {Modal} from 'antd';
 import {ModalClient, ModalPago, ModalDeuda} from './Forms';
 
 class ModalDesign extends React.Component{
     render(){
         let visible = this.props.visible;
         let changeState = this.props.handleState;
-        let handleOk = this.props.handleOk;
         let name = this.props.name;
         const title = "Agregar " + name;
-        let form;
+        let formDesign;
 
         if(name === "Cliente"){
-            form = <ModalClient />
+            formDesign = <ModalClient />
         }
         else if(name === "Deuda"){
-            form = <ModalDeuda />
+            formDesign = <ModalDeuda />
         }
         else if(name === "Pago"){
-            form = <ModalPago />
+            formDesign = <ModalPago />
         }
 
         return(
             <Modal
                 title={title}
                 visible={visible}
-                onOk={handleOk}
+                onOk={() => {
+                    console.log('ok')
+                  }}
                 onCancel={changeState}
-                footer={[
-                    <Button key="submit" type="primary" onClick={handleOk} >
-                        Agregar
-                    </Button>,
-                    <Button key="back" type="primary" onClick={changeState}>
-                        Regresar
-                    </Button>
-                ]}
+                okText="Agregar"
+                cancelText="Cancelar"
             >
-            {form}
+            {formDesign}
         </Modal>
         )
     }
