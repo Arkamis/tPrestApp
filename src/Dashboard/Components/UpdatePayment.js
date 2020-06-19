@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'antd';
 
 
-class UpdateDebt extends React.Component{
+class UpdatePayment extends React.Component{
   constructor(props){
     super(props)
     this.state = { visible: false }
@@ -45,7 +45,7 @@ class UpdateDebt extends React.Component{
     return (
       <div>
         <Button type="primary" onClick={this.showModal}>
-          Modificar
+            Modificar
         </Button>
         {modal}
       </div>
@@ -53,4 +53,4 @@ class UpdateDebt extends React.Component{
   }
 }
 
-export default UpdateDebt;
+export default UpdatePayment

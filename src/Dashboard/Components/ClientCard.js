@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import '../Styles/Dashboard.css'
 import { StarOutlined } from '@ant-design/icons'
 import { Button, PageHeader, Descriptions, Checkbox, Col } from 'antd';
-import Update from './UpdateDebt'
+import Update from './UpdateClient'
 
 class ClientCard extends React.Component{
 
