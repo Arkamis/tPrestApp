@@ -1,9 +1,10 @@
 import React from "react";
-import { Form, Input, Button, Checkbox, Row, Col, Divider } from 'antd';
+import { Form, Input, Button, Checkbox, Row, Col, Divider, Space } from 'antd';
 import { MailOutlined, LockOutlined, EyeTwoTone, EyeInvisibleOutlined, setTwoToneColor } from '@ant-design/icons';
 import { green } from "@ant-design/colors"
 import "./Login.css";
-import axios from 'axios'
+import axios from 'axios';
+import Recaptcha from 'react-recaptcha';
 
 class Login extends React.Component {
   constructor(props){
@@ -24,6 +25,10 @@ class Login extends React.Component {
 
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  callback = () => {
+    console.log('Done')
   }
 
   async dispatch(error){
@@ -95,11 +100,17 @@ class Login extends React.Component {
         <Row
           align="middle"
           gutter={[12,2]}
-          justify="start"
+          justify="center"
           className= "border-green"
         >
           <Col order={1} span={24} >
-            <img alt="Prestapp Logo" src="/logo2.PNG" className="imgSize" />
+            <div className="space-align-container">
+            <div className="space-align-block">
+              <Space align="center">
+                <img alt="Prestapp Logo" src="/prestapp.png" className="imgSize" />
+              </Space>
+              </div>
+              </div>
           </Col>
           <Col order={2} span={24}>
             <Divider orientation="center" style={{top:'0'}}></Divider>
@@ -139,6 +150,13 @@ class Login extends React.Component {
                   onChange={this.handlerChange}
                   iconRender={visible => (visible ? <EyeTwoTone style={styles.iconColor}/> : <EyeInvisibleOutlined />)}
                 />
+              </Form.Item>
+              <Form.Item>
+              <Recaptcha
+                sitekey="6LdgnqYZAAAAAPSxXv14Q3i42wmbbftty21SHgSH"
+                render="explicit"
+                onloadCallback={this.callback}
+              />
               </Form.Item>
               <Form.Item>
                 <Form.Item name="remember" valuePropName="checked" noStyle>

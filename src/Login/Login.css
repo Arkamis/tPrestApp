@@ -6,10 +6,22 @@
     }
 
     .imgSize{
-      width: 20rem !important; /*override the width below*/
-      width: 20rem;
+      width: 10rem !important; /*override the width below*/
+      width: 10rem;
+      
       max-width: 100%;
     }
+}
+
+.space-align-container {
+  display: flex;
+  align-item: flex-start;
+  flex-wrap: wrap;
+}
+.space-align-block {
+  margin: 8px 4px;
+  padding: 4px;
+  flex: none;
 }
 
 .border-green {
