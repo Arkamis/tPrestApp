@@ -1,9 +1,8 @@
 import React from "react";
 import { Form, Input, Button, Checkbox, Row, Col, Divider } from 'antd';
-import { MailOutlined, LockOutlined, EyeTwoTone, EyeInvisibleOutlined, LoginOutlined, setTwoToneColor } from '@ant-design/icons';
+import { MailOutlined, LockOutlined, EyeTwoTone, EyeInvisibleOutlined, setTwoToneColor } from '@ant-design/icons';
 import { green } from "@ant-design/colors"
 import "./Login.css";
-import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 class Login extends React.Component {
